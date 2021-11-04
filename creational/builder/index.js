@@ -1,10 +1,15 @@
-var Person = require('./Person')
+var PersonBuilder = require("./PersonBuilder");
 
 // Employees
-var sue = new Person('Sue', true, true, 60);
-var bill = new Person('Bill', true, false, 20);
-var phil = new Person('Phil', true, false);
+var mugz = new PersonBuilder("Mugisha").makeEmployee().makeManager(60).build();
+var lala = new PersonBuilder("Malaïka").makeEmployee().makePartTime().build();
+var malik = new PersonBuilder("Malik").makeEmployee().build();
 
 // Shoppers
-var charles = new Person('Charles', false, false, 0, 500, ['jeans', 'sunglasses']);
-var tabbitha = new Person('Tabbitha', false, false, 0, 1000);
+var munz = new PersonBuilder("Munia")
+	.withMoney(500)
+	.withList(["jeans", "sunglasses", "pearl earrings"])
+	.build();
+var mimi = new PersonBuilder("Misao").withMoney(1000).build();
+console.log(mugz.toString());
+console.log(munz.toString())
