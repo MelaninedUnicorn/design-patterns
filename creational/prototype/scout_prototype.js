@@ -1,8 +1,8 @@
 var Shopper = require("./Shopper");
 
 var scout = new Shopper();
-scout.addItemToList("camping knife");
-scout.addItemToList("tent");
-scout.addItemToList("backpack");
-scout.addItemToList("map");
+scout.addItemToList("Gold crown");
+scout.addItemToList("Gold earrings");
+scout.addItemToList("Rose gold silky dress");
+scout.addItemToList("Transparent sandals");
 module.exports = scout;
