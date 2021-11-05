@@ -1,4 +1,4 @@
-var { writeFile } = require("fs");
+var { writeFile, unlink } = require("fs");
 var path = require("path");
 
 class ExitCommand {
@@ -18,11 +18,14 @@ class CreateCommand {
 		this.fullPath = path.join(__dirname, fileName);
 	}
 	get name() {
-		return `Create ${this.fileName} for the realest`;
+		return `Create ${this.fileName} for their majesty.`;
 	}
 
 	execute() {
 		writeFile(this.fullPath, this.body, (f) => f);
+	}
+	undo() {
+		unlink(this.fullPath, (f) => f);
 	}
 }
 
